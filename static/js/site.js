@@ -5,7 +5,7 @@ try{const t=localStorage.getItem('abk-theme');if(t==='dark'||t==='light')documen
       const root = document.documentElement;
       const themeButton = document.querySelector('#theme-toggle');
       const scheme = window.matchMedia('(prefers-color-scheme: dark)');
-      const getTheme = () => root.getAttribute('data-theme') || (scheme.matches ? 'dark' : 'light');
+      const getTheme = () => root.getAttribute('data-theme') || 'light';
       const updateThemeLabel = () => { const dark = getTheme() === 'dark'; themeButton.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme'); themeButton.title = dark ? 'Switch to light theme' : 'Switch to dark theme'; themeButton.querySelector('.theme-icon').textContent = dark ? '☼' : '☾'; };
       themeButton.addEventListener('click', () => { const next = getTheme() === 'dark' ? 'light' : 'dark'; root.setAttribute('data-theme', next); try { localStorage.setItem('abk-theme', next); } catch(e) {} updateThemeLabel(); });
       if (scheme.addEventListener) scheme.addEventListener('change', updateThemeLabel);
@@ -18,7 +18,7 @@ try{const t=localStorage.getItem('abk-theme');if(t==='dark'||t==='light')documen
       menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
       document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
       document.addEventListener('click', (e) => { if(!e.target.closest('.site-nav')) setMenu(false); });
-      window.addEventListener('resize', () => { if (window.innerWidth > 820) setMenu(false); });
+      window.addEventListener('resize', () => { if (window.innerWidth > 900) setMenu(false); });
 
       const buttons = [...document.querySelectorAll('.filter-button')];
       const projects = [...document.querySelectorAll('.project')];
