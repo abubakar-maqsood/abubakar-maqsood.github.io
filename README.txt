@@ -1,21 +1,24 @@
-MUHAMMAD ABUBAKAR MAQSOOD — ACADEMIC PORTFOLIO (UPDATED NOV 2026)
+ABUBAKAR PORTFOLIO — GITHUB PAGES EDITION
 
-VERSION: Professional warm-neutral design (off-white / charcoal / forest-gray)
+Updated: November 2026
 
-CHANGES:
-- General About Me biography, without CGPA figures (grades remain in Education).
-- Corrected B.Ed CGPA to 2.88 / 4.00 on website and CV.
-- AquaSense AI project includes a clickable Google Colab hyperlink beside its name in the resume.
-- Updated resume: "Abubakar Resume.pdf"; editable .docx also included.
-- Preserved project pages, photograph, JavaScript demo, LinkedIn, and research interests.
+1. Extract this ZIP.
+2. Open your GitHub Pages repository (for example, abubakar-maqsood.github.io).
+3. Upload ALL extracted contents, not the ZIP itself. Keep index.html at the repository root.
+4. Commit changes and verify Settings > Pages > Deploy from a branch > main > /(root).
+5. Reload your public website after GitHub Pages finishes deploying. Use a hard refresh if you see an older cached version.
 
-GITHUB PAGES:
-1. Unzip the archive and open your <username>.github.io repository.
-2. Upload the contents, including index.html, research/, projects/, and static/ to repository root.
-3. Commit changes. In Settings > Pages, use main branch and /(root).
-4. After deployment, check the Resume PDF, AquaSense Colab, photo, mobile menu and project links.
+WHAT'S NEW
+- Hero headline now types, pauses, deletes and retypes this exact text:
+  Aspiring AI Researcher | Machine Learning & Applied AI | Software Developer
+- Removed the duplicate paragraph under the name.
+- Updated About Me and Open to Research sections with the selected concise wording.
+- Retained the existing profile photograph, projects, research pages and resume files.
 
-Note: GitHub Pages only hosts static files. The included AquaSense demo is browser-side, not a Python service.
+ACCESSIBILITY
+- Screen readers can read the complete role as a stable label.
+- Visitors with reduced-motion preferences see the static complete headline.
+- If JavaScript is unavailable, the full line remains visible.
 
-Before sharing the site with professors: verify that your LinkedIn URL is correct and that your Google Colab notebook is accessible to the intended audience.
-Research interests are exploratory; no publications or formally commenced study is claimed.
+GITHUB PAGES NOTE
+This is a static site; Python/FastAPI server endpoints cannot run on GitHub Pages.

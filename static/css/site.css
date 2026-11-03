@@ -437,3 +437,47 @@ img{max-width:100%}
 .project:hover,.interest-tile:hover{box-shadow:0 12px 30px rgba(29,39,29,.05)}
 .profile-spotlight{box-shadow:0 14px 32px rgba(32,39,30,.09)}
 @media(max-width:700px){.profile-image{object-position:center 25%;max-height:none}.profile-spotlight{max-width:360px}}
+
+
+/* Accessible, responsive typewriter line. The invisible full text reserves the
+   final height, preventing the buttons from shifting while letters are typed. */
+.typewriter-role {
+  position: relative;
+  max-width: 690px;
+  min-width: 0;
+  width: 100%;
+  margin: 6px 0 27px;
+  color: var(--text);
+  font-size: clamp(13px, 1.45vw, 17px);
+  font-weight: 700;
+  line-height: 1.65;
+  overflow-wrap: break-word;
+}
+.typewriter-role::before {
+  content: attr(data-full-text);
+  display: block;
+  visibility: hidden;
+  padding-right: 6px;
+  overflow-wrap: break-word;
+}
+.typewriter-live {
+  position: absolute;
+  inset: 0 0 auto 0;
+  padding-right: 6px;
+  overflow-wrap: break-word;
+}
+.typewriter-caret {
+  display: inline-block;
+  width: 2px;
+  height: 1.05em;
+  margin-left: 3px;
+  background: var(--accent);
+  vertical-align: -0.17em;
+  animation: portfolio-typewriter-blink 1s step-end infinite;
+}
+@keyframes portfolio-typewriter-blink {
+  50% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .typewriter-caret { animation: none; }
+}

@@ -78,3 +78,39 @@ try{const t=localStorage.getItem('abk-theme');if(t==='dark'||t==='light')documen
     button.disabled=false;
   });
 })();
+
+
+/* Hero typewriter: full phrase, delete and repeat. Static text remains if JS is
+   unavailable; screen readers receive the unchanging complete aria-label. */
+(() => {
+  const element = document.querySelector('#typewriter-text');
+  if (!element) return;
+  const phrase = element.dataset.fullText || element.textContent;
+  const media = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (media.matches) { element.textContent = phrase; return; }
+  let count = 0;
+  let deleting = false;
+  let timer;
+  const tick = () => {
+    if (document.hidden) { timer = window.setTimeout(tick, 350); return; }
+    if (deleting) count = Math.max(0, count - 1);
+    else count = Math.min(phrase.length, count + 1);
+    element.textContent = phrase.slice(0, count);
+    if (!deleting && count === phrase.length) {
+      deleting = true;
+      timer = window.setTimeout(tick, 2350);
+    } else if (deleting && count === 0) {
+      deleting = false;
+      timer = window.setTimeout(tick, 550);
+    } else {
+      timer = window.setTimeout(tick, deleting ? 19 : 43);
+    }
+  };
+  element.textContent = '';
+  timer = window.setTimeout(tick, 450);
+  if (media.addEventListener) media.addEventListener('change', e => {
+    window.clearTimeout(timer);
+    if (e.matches) { element.textContent = phrase; }
+    else { count = 0; deleting = false; element.textContent = ''; timer = window.setTimeout(tick, 450); }
+  });
+})();
