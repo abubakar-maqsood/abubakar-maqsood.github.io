@@ -1,4 +1,4 @@
-try{const t=localStorage.getItem('abk-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}
+try{const t=localStorage.getItem('abk-theme-cream-v1');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}
 
 
     (() => {
@@ -7,7 +7,7 @@ try{const t=localStorage.getItem('abk-theme');if(t==='dark'||t==='light')documen
       const scheme = window.matchMedia('(prefers-color-scheme: dark)');
       const getTheme = () => root.getAttribute('data-theme') || 'light';
       const updateThemeLabel = () => { const dark = getTheme() === 'dark'; themeButton.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme'); themeButton.title = dark ? 'Switch to light theme' : 'Switch to dark theme'; themeButton.querySelector('.theme-icon').textContent = dark ? '☼' : '☾'; };
-      themeButton.addEventListener('click', () => { const next = getTheme() === 'dark' ? 'light' : 'dark'; root.setAttribute('data-theme', next); try { localStorage.setItem('abk-theme', next); } catch(e) {} updateThemeLabel(); });
+      themeButton.addEventListener('click', () => { const next = getTheme() === 'dark' ? 'light' : 'dark'; root.setAttribute('data-theme', next); try { localStorage.setItem('abk-theme-cream-v1', next); } catch(e) {} updateThemeLabel(); });
       if (scheme.addEventListener) scheme.addEventListener('change', updateThemeLabel);
       updateThemeLabel();
 
